@@ -1,4 +1,4 @@
-.cursor
+/dist
 /trash
 /images
 /image
@@ -17,4 +17,4 @@
 *.md
 *.ps1
 *.bash
-*.mdc
+
