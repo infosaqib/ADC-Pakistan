@@ -31,6 +31,9 @@ services/*.php
 # -----------------------------------------------------------------------------
 blog/admin/uploads/
 images/services/
+public/uploads/
+public/images/services/
+public/blog/
 
 # -----------------------------------------------------------------------------
 # Dependencies

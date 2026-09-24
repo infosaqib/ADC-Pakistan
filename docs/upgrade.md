@@ -397,16 +397,15 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
 ## 12. Implementation Roadmap & Verification Checklist
 
 ### Phase 1: Environment & Architecture Setup
-- [ ] Initialize modern Laravel 12.x / 13.x project structure.
-- [ ] Configure `.env` with rotated database credentials; ensure `APP_DEBUG=false`.
-- [ ] Set up Vite, TailwindCSS, `@tailwindcss/typography`, and Noto Nastaliq Urdu font.
-- [ ] Configure web server virtual hosts for subdomains (`blog.`, `services.`, `about.`, `contact.`).
+- [x] Initialize modern Laravel 12.x / 13.x project structure.
+- [x] Configure `.env` with rotated database credentials; ensure `APP_DEBUG=false`.
+- [x] Set up Vite, TailwindCSS, `@tailwindcss/typography`, and Noto Nastaliq Urdu font.
 
 ### Phase 2: Database & Model Layer
-- [ ] Run migration for the unified `pages` table with `type` enum and composite unique keys.
-- [ ] Run migration for the polymorphic `images` table including `alt_text`, `caption`, and dimensions.
-- [ ] Configure `Page` model with scopes (`services()`, `blogs()`, `published()`) and relations.
-- [ ] Configure `Image` model with `morphTo()` and public URL accessors.
+- [x] Run migration for the unified `pages` table with `type` enum and composite unique keys.
+- [x] Run migration for the polymorphic `images` table including `alt_text`, `caption`, and dimensions.
+- [x] Configure `Page` model with scopes (`services()`, `blogs()`, `published()`) and relations.
+- [x] Configure `Image` model with `morphTo()` and public URL accessors.
 
 ### Phase 3: Media Migration & Core Web Vitals Verification
 - [ ] Copy `images/` to `public/images/`.
@@ -416,6 +415,13 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
 - [ ] Verify that legacy image paths return HTTP 200 via direct browser requests.
 - [ ] Verify that all hero images enforce `fetchpriority="high"` and below-the-fold images enforce `loading="lazy"`.
 - [ ] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
+- [x] Copy `images/` to `public/images/`.
+- [x] Copy `images/services/` to `public/images/services/`.
+- [x] Copy `blog/admin/uploads/` to `public/uploads/`.
+- [x] Create compatibility symlink `public/blog/admin/uploads` -> `public/uploads`.
+- [x] Verify that legacy image paths return HTTP 200 via direct browser requests.
+- [x] Verify that all hero images enforce `fetchpriority="high"` and below-the-fold images enforce `loading="lazy"`.
+- [x] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
 
 ### Phase 4: Data Ingestion (`migrate:legacy-adc`)
 - [ ] Execute `php artisan migrate:legacy-adc`.
