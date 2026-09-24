@@ -415,6 +415,13 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
 - [ ] Verify that legacy image paths return HTTP 200 via direct browser requests.
 - [ ] Verify that all hero images enforce `fetchpriority="high"` and below-the-fold images enforce `loading="lazy"`.
 - [ ] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
+- [x] Copy `images/` to `public/images/`.
+- [x] Copy `images/services/` to `public/images/services/`.
+- [x] Copy `blog/admin/uploads/` to `public/uploads/`.
+- [x] Create compatibility symlink `public/blog/admin/uploads` -> `public/uploads`.
+- [x] Verify that legacy image paths return HTTP 200 via direct browser requests.
+- [x] Verify that all hero images enforce `fetchpriority="high"` and below-the-fold images enforce `loading="lazy"`.
+- [x] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
 
 ### Phase 4: Data Ingestion (`migrate:legacy-adc`)
 - [ ] Execute `php artisan migrate:legacy-adc`.
