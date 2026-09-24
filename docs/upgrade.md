@@ -1,4 +1,4 @@
-﻿# Master Upgrade Specification: ADC-Pakistan to Modern Laravel (12.x / 13.x)
+# Master Upgrade Specification: ADC-Pakistan to Modern Laravel (12.x / 13.x)
 
 > **Document Version:** 4.0.0 (Modular & Code-Free Architecture)  
 > **Target Framework:** Modern Laravel (v12.x / v13.x Lean Architecture)  
