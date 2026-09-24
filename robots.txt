@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /about/
+Allow: /contact/
+Allow: /includes/
+Allow: /services/
+
+# Disallow admin and private areas
+
+
+Disallow: /config/
+Disallow: /admin/
+Disallow: /dist/
+Disallow: /js/
+Disallow: /stylesheets/
+
+# Allow media
+Allow: /images/
+
+# Sitemap locations
+Sitemap: https://armydogcenterpk.com/sitemap.xml

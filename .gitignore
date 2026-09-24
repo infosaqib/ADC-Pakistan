@@ -1,0 +1,106 @@
+# -----------------------------------------------------------------------------
+# Environment & Secret Protection (Zero Data Leak)
+# -----------------------------------------------------------------------------
+.env
+.env.backup
+.env.production
+.env.*
+!.env.example
+*.key
+*.cert
+*.pem
+
+# Legacy Sensitive Files (Plaintext DB Credentials & Logs)
+blog/config/config.php
+blog/admin/debug.log
+*.sql
+*.sqlite
+*.dump
+*.tar.gz
+*.zip
+
+# -----------------------------------------------------------------------------
+# Legacy Static Service & Blog Pages (Stored in MySQL DB in Laravel)
+# -----------------------------------------------------------------------------
+blog/pages/
+services/*.php
+!services/index.php
+
+# -----------------------------------------------------------------------------
+# Media & Uploads (Blog & Service Images)
+# -----------------------------------------------------------------------------
+blog/admin/uploads/
+images/services/
+
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
+/vendor/
+/node_modules/
+/npm-debug.log*
+/yarn-error.log*
+/pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+# Laravel Storage, Cache & Logs
+# -----------------------------------------------------------------------------
+/storage/app/*
+!/storage/app/.gitignore
+!/storage/app/public/
+/storage/app/public/*
+!/storage/app/public/.gitignore
+
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# -----------------------------------------------------------------------------
+# Compiled Frontend & Build Artifacts
+# -----------------------------------------------------------------------------
+/public/build/
+/public/hot
+/public/storage
+dist/output.css
+
+# -----------------------------------------------------------------------------
+# Testing & Code Quality
+# -----------------------------------------------------------------------------
+.phpunit.result.cache
+.pest/
+/coverage/
+
+# -----------------------------------------------------------------------------
+# Temporary & Generated Files
+# -----------------------------------------------------------------------------
+*.tmp
+*.tmp.*
+.tmp-*
+.cache/
+sitemap.xml
+sitemap*.xml
+sitemap.mxl
+
+# -----------------------------------------------------------------------------
+# Operating System & IDE Artifacts
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

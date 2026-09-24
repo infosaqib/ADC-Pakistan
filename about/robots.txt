@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+
+
+
+# Sitemap locations
+Sitemap: https://about.armydogcenterpk.com/sitemap.xml
