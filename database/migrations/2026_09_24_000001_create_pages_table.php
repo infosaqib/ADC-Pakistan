@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['service', 'blog'])->index();
-            $table->string('title');
+            $table->string('title', 500);
             $table->string('slug')->index();
             $table->string('subtitle')->nullable();
             $table->longText('content');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('city', 100)->nullable()->index();
             $table->string('province', 100)->nullable()->index();
             $table->json('phone_numbers')->nullable();
-            $table->string('meta_title')->nullable();
+            $table->string('meta_title', 500)->nullable();
             $table->text('meta_description')->nullable();
             $table->string('canonical_url', 500)->nullable();
             $table->json('schema_markup')->nullable();

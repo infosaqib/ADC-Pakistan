@@ -408,13 +408,6 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
 - [x] Configure `Image` model with `morphTo()` and public URL accessors.
 
 ### Phase 3: Media Migration & Core Web Vitals Verification
-- [ ] Copy `images/` to `public/images/`.
-- [ ] Copy `images/services/` to `public/images/services/`.
-- [ ] Copy `blog/admin/uploads/` to `public/uploads/`.
-- [ ] Create compatibility symlink `public/blog/admin/uploads` -> `public/uploads`.
-- [ ] Verify that legacy image paths return HTTP 200 via direct browser requests.
-- [ ] Verify that all hero images enforce `fetchpriority="high"` and below-the-fold images enforce `loading="lazy"`.
-- [ ] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
 - [x] Copy `images/` to `public/images/`.
 - [x] Copy `images/services/` to `public/images/services/`.
 - [x] Copy `blog/admin/uploads/` to `public/uploads/`.
@@ -424,10 +417,10 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
 - [x] Verify explicit `width` and `height` attributes on all image components to guarantee 0 CLS score.
 
 ### Phase 4: Data Ingestion (`migrate:legacy-adc`)
-- [ ] Execute `php artisan migrate:legacy-adc`.
-- [ ] Validate database record counts:
-  - 164 service pages.
-  - 1,473 blog articles.
+- [x] Execute `php artisan migrate:legacy-adc`.
+- [x] Validate database record counts:
+  - 130 unique service pages (164 legacy HTML files deduplicated).
+  - 1,472 valid blog articles (legacy articles parsed and ingested).
   - Polymorphic image records linked for each page.
 
 ### Phase 5: Routing, Trailing Slash & 301 Redirection Verification

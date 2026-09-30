@@ -41,10 +41,16 @@ class PageAndImageModelTest extends TestCase
 
     public function test_scopes_filter_by_type_status_and_location(): void
     {
+        $initialServices = Page::services()->count();
+        $initialBlogs = Page::blogs()->count();
+        $initialPublished = Page::published()->count();
+        $initialSindh = Page::services()->byProvince('Sindh')->count();
+        $initialKarachi = Page::services()->byCity('Karachi')->count();
+
         Page::create([
             'type' => 'service',
-            'title' => 'Karachi Dog Center',
-            'slug' => 'karachi-dog-center',
+            'title' => 'Karachi Test Scope Dog Center',
+            'slug' => 'karachi-test-scope-dog-center',
             'content' => '<p>Karachi</p>',
             'city' => 'Karachi',
             'province' => 'Sindh',
@@ -54,8 +60,8 @@ class PageAndImageModelTest extends TestCase
 
         Page::create([
             'type' => 'service',
-            'title' => 'Peshawar Dog Center',
-            'slug' => 'peshawar-dog-center',
+            'title' => 'Peshawar Test Scope Dog Center',
+            'slug' => 'peshawar-test-scope-dog-center',
             'content' => '<p>Peshawar</p>',
             'city' => 'Peshawar',
             'province' => 'KPK',
@@ -65,18 +71,18 @@ class PageAndImageModelTest extends TestCase
 
         Page::create([
             'type' => 'blog',
-            'title' => 'Dog Care Tips',
-            'slug' => 'dog-care-tips',
+            'title' => 'Dog Care Tips Unique Scope',
+            'slug' => 'dog-care-tips-unique-scope',
             'content' => '<p>Care tips</p>',
             'status' => 'published',
             'published_at' => now()->subDay(),
         ]);
 
-        $this->assertEquals(2, Page::services()->count());
-        $this->assertEquals(1, Page::blogs()->count());
-        $this->assertEquals(2, Page::published()->count());
-        $this->assertEquals(1, Page::services()->byProvince('Sindh')->count());
-        $this->assertEquals(1, Page::services()->byCity('Karachi')->count());
+        $this->assertEquals($initialServices + 2, Page::services()->count());
+        $this->assertEquals($initialBlogs + 1, Page::blogs()->count());
+        $this->assertEquals($initialPublished + 2, Page::published()->count());
+        $this->assertEquals($initialSindh + 1, Page::services()->byProvince('Sindh')->count());
+        $this->assertEquals($initialKarachi + 1, Page::services()->byCity('Karachi')->count());
     }
 
     public function test_polymorphic_image_relationships(): void

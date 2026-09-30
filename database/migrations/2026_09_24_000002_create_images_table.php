@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('disk', 50)->default('public');
             $table->string('url', 500)->nullable();
             $table->enum('role', ['featured', 'hero', 'gallery', 'inline', 'og_image'])->default('featured')->index();
-            $table->string('alt_text')->nullable();
-            $table->string('caption')->nullable();
+            $table->string('alt_text', 500)->nullable();
+            $table->string('caption', 500)->nullable();
             $table->string('mime_type', 100)->nullable();
             $table->unsignedInteger('file_size')->nullable();
             $table->unsignedSmallInteger('width')->nullable();
