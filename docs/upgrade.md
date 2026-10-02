@@ -424,16 +424,16 @@ Because there are **1,473 blog files** and **164 service pages**, migration is p
   - Polymorphic image records linked for each page.
 
 ### Phase 5: Routing, Trailing Slash & 301 Redirection Verification
-- [ ] Register `RemoveTrailingSlash` middleware and verify 301 redirects for `/services/karachi/` ──▶ `/services/karachi`.
-- [ ] Verify HTTP 301 responses for legacy `.php` service and blog URLs using `curl -I`.
-- [ ] Verify subdomain routing and cross-subdomain link generation.
+- [x] Register `RemoveTrailingSlash` middleware and verify 301 redirects for `/services/karachi/` ──▶ `/services/karachi`.
+- [x] Verify HTTP 301 responses for legacy `.php` service and blog URLs using `curl -I`.
+- [x] Verify subdomain routing and cross-subdomain link generation.
 
 ### Phase 6: SSR & Blade Components (Addressing `docs/seo.md`)
-- [ ] Build `<x-layouts.app>` with the SSOT `<x-seo-head>` component.
-- [ ] Verify that `Ctrl + U` (View Source) displays complete HTML body content and JSON-LD schema without JavaScript.
-- [ ] Verify that paginated blog URLs (`?page=2`) render self-referential canonical tags and `<link rel="prev/next">`.
-- [ ] Verify permissive `robots.txt` output across all subdomains.
-- [ ] Build `<x-city-section>` directory to eliminate orphan pages.
+- [x] Build `<x-layouts.app>` with the SSOT `<x-seo-head>` component.
+- [x] Verify that `Ctrl + U` (View Source) displays complete HTML body content and JSON-LD schema without JavaScript.
+- [x] Verify that paginated blog URLs (`?page=2`) render self-referential canonical tags and `<link rel="prev/next">`.
+- [x] Verify permissive `robots.txt` output across all subdomains.
+- [x] Build `<x-city-section>` directory to eliminate orphan pages.
 
 ### Phase 7: Duplicate Service Prevention Testing
 - [ ] Attempt creating a service page with an existing city title via admin interface.

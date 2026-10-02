@@ -204,6 +204,7 @@ class PageService
             'meta_title' => $title,
             'meta_description' => $excerpt,
             'canonical_url' => "https://blog.armydogcenterpk.com/{$slug}",
+            'schema_markup' => !empty($post['id']) ? ['legacy_id' => (int) $post['id']] : null,
             'status' => 'published',
             'published_at' => $publishedAt,
             'created_at' => $publishedAt,
